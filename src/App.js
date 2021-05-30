@@ -32,7 +32,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    if(prevProps.trips != this.props.trips){
+    if(prevProps.trips !== this.props.trips){
       // parse trips again if they changed
       parseTrips(this.props.trips, this.props.setStates);
     }

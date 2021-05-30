@@ -1,5 +1,6 @@
 import {combineReducers, createStore} from 'redux';
 import tripList from '../data/trips.json';
+import OrderReducer from '../redux/OrderRedux';
 
 import globalReducer from './globalRedux';
 import filtersReducer from './filtersRedux';
@@ -18,12 +19,18 @@ const initialState = {
       from: 1,
       to: 14,
     },
+    order: {
+      trip: null,
+      email: '',
+      options: {},
+    },
   },
 };
 
 // define reducers
 const reducers = {
   filters: filtersReducer,
+  order: OrderReducer,
 };
 
 // add blank reducers for initial state properties without reducers
