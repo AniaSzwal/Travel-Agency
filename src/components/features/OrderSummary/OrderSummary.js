@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './OrderSummary.scss';
 import {calculateTotal} from '../../../utils/calculateTotal.js';
