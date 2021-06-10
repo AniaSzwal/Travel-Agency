@@ -43,6 +43,6 @@ describe('Component TripSummary', () => {
   it('should not render div tags if props tags is falsy', () => {
     const component = shallow(<TripSummary />);
 
-    expect(component.hasClass('tags')).toEqual(false);
+    expect(component.find('.tag').length).toEqual(0); // można dodać '.not.toEqual' - tymcasowe zaprzeczenie testu, po to zeby udowodnic to, co mial sprawdzać
   });
 });
