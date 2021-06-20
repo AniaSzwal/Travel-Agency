@@ -10,19 +10,21 @@ const select = {
 
 const mockProps = {
   title: 'Title Example',
-  description: 'Description Example',
+  description: 'It is Happy Hour',
 };
 
-describe ('Component HappyHourAd', () => {
+
+describe('Component HappyHourAd', () => {
   it('should render without crashing', () => {
-    const component = shallow(<HappyHourAd />);
-    expect(component).toBeTruthy();
+    const component = shallow(<HappyHourAd />); // do component trafia wynik renderowania, wiec funkcja shallow zwraca klasę SHALLOWRAPPER {}
+    console.log(component);
+    expect(component).toBeTruthy(); //sprawdza, czy coś jest podobne do prawdy
   });
 
-  it('should render heading and description', () => {
+  it('should render title and description', () => {
     const component = shallow(<HappyHourAd />);
-    expect(component.exists(select.title)).toEqual(true);
-    expect(component.exists(select.description)).toEqual(true);
+    expect(component.find('.title').length).toBe(1);
+    expect(component.find('.promoDescription').length).toBe(1);
   });
 
   it('sholuld render correct title', () => {
