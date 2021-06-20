@@ -13,30 +13,6 @@ const mockProps = {
   description: 'It is Happy Hour',
 };
 
-beforeAll(() => {
-  const utilsModule = jest.requireActual('../../../utils/formatTime.js');
-  utilsModule.formatTime = jest.fn(seconds => seconds);
-});
-
-describe('Component HappyHourAd', () => {
-  it('should render without crashing', () => {
-    const component = shallow(<HappyHourAd />); // do component trafia wynik renderowania, wiec funkcja shallow zwraca klasę SHALLOWRAPPER {}
-    console.log(component);
-    expect(component).toBeTruthy(); //sprawdza, czy coś jest podobne do prawdy
-  });
-
-  it('should render title and description', () => {
-    const component = shallow(<HappyHourAd />);
-    expect(component.find('.title').length).toBe(1);
-    expect(component.find('.promoDescription').length).toBe(1);
-  });
-
-  it('sholuld render correct title', () => {
-    const component = shallow(<HappyHourAd {...mockProps} />);
-    expect(component.find(select.title).text()).toEqual(mockProps.title);
-  });
-});
-
 const trueDate = Date;
 const mockDate = customDate => class extends Date {
   constructor(...args) {
